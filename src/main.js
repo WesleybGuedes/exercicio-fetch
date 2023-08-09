@@ -18,5 +18,22 @@ function randomId() {
 button.addEventListener('click', (event) => {
   event.preventDefault();
   const id = randomId();
-  
+  // Fazer o fetch utilizando a API_BASE e o id gerado na function
+
+  fetch(`${API_BASE}/id/${id}.json`)
+  // Depois tem que extrair o objeto com a função .json()
+    .then((result) => result.json())
+    .then((data) => {
+      // Uma vez extraído, coloca as infos nas constantes criadas:
+      img.src = data.images.xs;
+      name.innerHTML = data.name;
+    })
+// Caso haja erro, nós tratamos o mesmo com o .catch()
+.catch((error) => Swal.fire({
+  // Aqui, estou usando a biblioteca SweetAlert2 importada no comeco do proj:
+  title: 'Hero not found',
+  text: error.message,
+  icon: 'error',
+  confirmButtonText: 'Cool',
+}));
 });
