@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "vite --open",
-    "lint": "eslint --no-inline-config --no-error-on-unmatched-pattern -c .eslintrc.json . --ext .js"
+    "lint": "eslint --no-inline-config --no-error-on-unmatched-pattern -c .eslintrc . --ext .js"
   },
   "author": "",
   "license": "ISC",
